@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    environment:
+      - REDIS_ADDR=redis:6379
+      - REDIS_PASSWORD=
+    command: ["-tg-bot-token", "7483223949:AAE3QuIxCO7gXy1cG-qJzRbLocXF53WS3SQ"]
+    depends_on:
+      - redis
+    restart: always
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
