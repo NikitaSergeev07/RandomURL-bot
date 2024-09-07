@@ -15,7 +15,7 @@ const (
 	batchSize = 100
 )
 
-// 7483223949:AAE3QuIxCO7gXy1cG-qJzRbLocXF53WS3SQ
+
 func main() {
 	eventsProcessor := telegram.New(tgClient.New(
 		tgBotHost, mustToken()),
